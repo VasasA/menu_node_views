@@ -1,0 +1,6 @@
+;  $Id$
+name = Menu Node Views
+description = Enables Views to leverage menu hierarchies when displaying nodes.
+dependencies[] = menu_node
+dependencies[] = views
+core = 6.x
