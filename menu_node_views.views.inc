@@ -12,9 +12,11 @@
 function menu_node_views_views_data() {
   $data = array();
   $data['menu_node']['table']['group'] = t('Menu');
-  $data['menu_node']['table']['join']['node'] = array(
-    'left_field' => 'nid',
-    'field' => 'nid',
+  $data['menu_node']['table']['join'] = array(
+    'node' => array(
+      'left_field' => 'nid',
+      'field' => 'nid',
+    ),
   );
 /*  $data['menu_node']['mlid'] = array(
     'title' => t('Menu link id'),
@@ -25,9 +27,18 @@ function menu_node_views_views_data() {
   );
   $data['menu_node']['nid'] = array(
     'title' => t('Node id'),
-    'help' => t('The node id.'),
+    'help' => t('The node id, menu-sensitive.'),
     'field' => array(
       'click sortable' => TRUE,
+    ),
+    'argument' => array(
+      'handler' => 'menu_node_views_argument_nid',
+    ),
+    'filter' => array(
+      'handler' => 'views_handler_filter',
+    ),
+    'sort' => array(
+      'handler' => 'views_handler_sort',
     ),
   );*/
 
@@ -42,7 +53,28 @@ function menu_node_views_views_data() {
       'field' => 'mlid',
     ),
   );
+  $data['menu_links']['table']['base'] = array(
+    'field' => 'mlid',
+    'title' => t('Menu tree'),
+    'help' => t('Menu item views.'),
+  );
   $data['menu_links']['table']['group'] = t('Menu');
+  $data['menu_links']['nid'] = array(
+    'title' => t('Node id'),
+    'help' => t('The node id, menu-sensitive.'),
+    'field' => array(
+      'click sortable' => TRUE,
+    ),
+    'argument' => array(
+      'handler' => 'menu_node_views_argument_nid',
+    ),
+    'filter' => array(
+      'handler' => 'views_handler_filter',
+    ),
+    'sort' => array(
+      'handler' => 'views_handler_sort',
+    ),
+  );
   $data['menu_links']['menu_name'] = array(
     'title' => t('Menu name'),
     'help' => t('The name of the menu.'),
@@ -197,6 +229,10 @@ function menu_node_views_handlers() {
       // Sorts
       'menu_node_views_sort_menu' => array(
         'parent' => 'views_handler_sort',
+      ),
+      // Arguments
+      'menu_node_views_argument_nid' => array(
+        'parent' => 'views_handler_argument_node_nid',
       ),
     ),
   );
