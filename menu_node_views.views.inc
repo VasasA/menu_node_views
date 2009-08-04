@@ -110,6 +110,13 @@ function menu_node_views_views_data() {
       'handler' => 'views_handler_sort',
     ),
   );
+  $data['menu_links']['description'] = array(
+    'title' => t('Description'),
+    'help' => t('The description used for the menu item.'),
+    'field' => array(
+      'handler' => 'menu_node_views_field_description'
+    ),
+  );
   $data['menu_links']['link_path'] = array(
     'title' => t('Link path'),
     'help' => t('The link path for the menu item.'),
@@ -224,6 +231,9 @@ function menu_node_views_handlers() {
         'parent' => 'views_handler_field',
       ),
       'menu_node_views_field_link_title' => array(
+        'parent' => 'views_handler_field',
+      ),
+      'menu_node_views_field_description' => array(
         'parent' => 'views_handler_field',
       ),
       // Sorts
