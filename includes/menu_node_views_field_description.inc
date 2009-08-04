@@ -19,6 +19,7 @@ class menu_node_views_field_description extends views_handler_field {
   }
   
   function render($values) {
+    $output = '';
     $data = unserialize($values->menu_links_options);
     if (!empty($data['attributes']['title'])) {
       $output = filter_xss($data['attributes']['title']);
