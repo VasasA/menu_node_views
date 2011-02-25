@@ -1,6 +1,5 @@
 <?php
 
-// $Id$
 
 /**
  * @file Enables Views to leverage menu hierarchies when displaying nodes.

@@ -1,6 +1,5 @@
 <?php
 
-// $Id$
 
 /**
  * @file Views sort handler for the menu hierarchy.

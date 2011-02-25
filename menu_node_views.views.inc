@@ -1,6 +1,5 @@
 <?php
 
-// $Id$
 
 /**
  * @file Menu Node Views definitions.

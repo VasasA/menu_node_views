@@ -1,6 +1,5 @@
 <?php
 
-// $Id$
 
 /**
  * @file Views field handler for the description of a menu item.

@@ -1,6 +1,5 @@
 <?php
 
-// $Id$
 
 /**
  * Argument handler to accept a node id that is menu-sensitive.

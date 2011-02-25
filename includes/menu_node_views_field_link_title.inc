@@ -1,6 +1,5 @@
 <?php
 
-// $Id$
 
 /**
  * Views handler for menu links.
