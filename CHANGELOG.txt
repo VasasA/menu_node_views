@@ -1,9 +1,0 @@
-
-04-AUG-2009
--- #527506 by mrfelton. Nice patch to add menu description to fields.
-
-16-JUL-2009
--- #518818 by kle. Fixes sorting error.
-
-29-JUN-2009
--- Adds stub code for converting nids into menu trees.
