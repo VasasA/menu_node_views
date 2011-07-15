@@ -215,35 +215,3 @@ function menu_node_views_views_data() {
   );
   return $data;
 }
-
-/**
- * Implement hook_views_handlers().
- */
-function menu_node_views_handlers() {
-  $handlers = array(
-    'info' => array(
-      'path' => drupal_get_path('module', 'menu_node_views') .'/includes',
-    ),
-    'handlers' => array(
-      // Fields
-      'menu_node_views_field_menu_name' => array(
-        'parent' => 'views_handler_field',
-      ),
-      'menu_node_views_field_link_title' => array(
-        'parent' => 'views_handler_field',
-      ),
-      'menu_node_views_field_description' => array(
-        'parent' => 'views_handler_field',
-      ),
-      // Sorts
-      'menu_node_views_sort_menu' => array(
-        'parent' => 'views_handler_sort',
-      ),
-      // Arguments
-      'menu_node_views_argument_nid' => array(
-        'parent' => 'views_handler_argument_node_nid',
-      ),
-    ),
-  );
-  return $handlers;
-}

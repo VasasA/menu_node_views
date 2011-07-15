@@ -1,6 +1,5 @@
 <?php
 
-
 /**
  * @file Views field handler for the name of a menu.
  */
@@ -14,6 +13,5 @@ class menu_node_views_field_menu_name extends views_handler_field {
     $value = $names[$values->{$this->field_alias}];
     return check_plain($value);
   }
-
+  
 }
-

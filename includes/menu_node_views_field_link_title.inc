@@ -40,19 +40,26 @@ class menu_node_views_field_link_title extends views_handler_field {
       '#size' => 10,
       '#default_value' => $this->options['display_depth'],
     );
-
   }
 
-  
+  /**
+   * Render whatever the data is as a link to the customer profile.
+   *
+   * Data should be made XSS safe prior to calling this function.
+   */
+  function render_link($data, $values) {
+    if (!empty($this->options['link_to_item']) && $data !== NULL && $data !== '') {
+      $this->options['alter']['make_link'] = TRUE;
+      $this->options['alter']['path'] = $this->get_value($values, 'link_path');
+    }
+    return $data;
+  }
+
   function render($values) {
-    if (empty($this->options['link_to_item'])) {
-      $output = check_plain($values->{$this->field_alias});
-    }
-    else {
-      $output = l($values->{$this->field_alias}, $values->{$this->aliases['link_path']});
-    }
     $text = check_plain($this->options['display_depth']);
-    $max = $values->{$this->aliases['display_depth']};
-    return str_repeat($text, $max) .' '. $output;
+    $max = $this->get_value($values, 'display_depth');
+    $value = str_repeat($text, $max) .' '. $this->get_value($values);
+    return $this->render_link(html_entity_decode($this->sanitize_value($value)), $values);
   }
+
 }
