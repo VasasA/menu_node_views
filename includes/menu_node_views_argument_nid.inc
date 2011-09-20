@@ -27,17 +27,20 @@ class menu_node_views_argument_nid extends views_handler_argument_node_nid {
     $this->ensure_my_table();
     $nid = $this->argument;
     $depth = $this->options['depth'];
-    $pid = db_result(db_query("SELECT mlid FROM {menu_node} WHERE nid = %d", $nid));
-    if (!empty($pid)) {
-      $item = db_fetch_array(db_query("SELECT * FROM {menu_links} WHERE mlid = %d", $pid));
-      $max_depth = menu_link_children_relative_depth($item);
-      if ($max_depth < $this->options['depth']) {
-        $depth = $max_depth;
+    $pid_list = db_query("SELECT mlid FROM {menu_node} WHERE nid = :nid", array(':nid' => $nid));
+    foreach ($pid_list as $pid) {
+      $item_list = db_query("SELECT * FROM {menu_links} WHERE mlid = :pid", array(':pid' => $pid->mlid));
+      foreach($item_list as $item) {
+        $max_depth = menu_link_children_relative_depth((array)$item);
+        if ($max_depth < $this->options['depth']) {
+          $depth = $max_depth;
+        }
+        $i = (int) $item->depth;
+        $depth = (int) ($i + $depth);
+        $this->query->add_where(0, $this->table_alias . '.p' . $i, (int) $item->mlid, '=');
+        $this->query->add_where(0, $this->table_alias . '.depth', $i, '>');
+        $this->query->add_where(0, $this->table_alias . '.depth', $depth, '<='); 
       }
-      $i = (int) $item['depth'];
-      $depth = (int) ($i + $depth);
-      $where = "$this->table_alias.p$i = ". (int) $item['mlid'] . " AND $this->table_alias.depth > ". $i ." AND $this->table_alias.depth <= ". $depth;
-      $this->query->add_where(0, $where); 
     }
   }
 }
