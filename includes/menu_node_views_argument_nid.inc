@@ -23,7 +23,7 @@ class menu_node_views_argument_nid extends views_handler_argument_node_nid {
     unset($form['break_phrase']);
   }
 
-  function query() {
+  function query($group_by = FALSE) {
     $this->ensure_my_table();
     $nid = $this->argument;
     $depth = $this->options['depth'];
