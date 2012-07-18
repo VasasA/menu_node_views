@@ -163,6 +163,12 @@ function menu_node_views_views_data() {
     'sort' => array(
       'handler' => 'views_handler_sort',
     ),
+    'relationship' => array(
+      'base' => 'menu_links',
+      'field' => 'plid',
+      'handler' => 'views_handler_relationship',
+      'label' => t('Menu link - parent item'),
+    ),
   );
   $data['menu_links']['weight'] = array(
     'title' => t('Weight'),
