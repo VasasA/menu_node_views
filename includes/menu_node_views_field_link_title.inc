@@ -56,9 +56,15 @@ class menu_node_views_field_link_title extends views_handler_field {
   }
 
   function render($values) {
-    $text = check_plain($this->options['display_depth']);
-    $max = $this->get_value($values, 'display_depth');
-    $value = str_repeat($text, $max) .' '. $this->get_value($values);
+    if (!empty($this->options['display_depth'])) {
+      $text = check_plain($this->options['display_depth']);
+      $max = $this->get_value($values, 'display_depth');
+      $indentation = str_repeat($text, $max) . ' ';
+    }
+    else {
+      $indentation = '';
+    }
+    $value = $indentation . $this->get_value($values);
     return $this->render_link(html_entity_decode($this->sanitize_value($value)), $values);
   }
 
