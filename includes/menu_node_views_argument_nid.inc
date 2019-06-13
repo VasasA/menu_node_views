@@ -16,7 +16,7 @@ class menu_node_views_argument_nid extends views_handler_argument_node_nid {
     $form['depth'] = array(
       '#type' => 'select',
       '#title' => t('Depth'),
-      '#options' => drupal_map_assoc(array(1, 2, 3, 4, 5, 6, 7, 8, 9)),
+      '#options' => backdrop_map_assoc(array(1, 2, 3, 4, 5, 6, 7, 8, 9)),
       '#default_value' => $this->options['depth'],
       '#description' => t('The depth will match nodes tagged with terms in the hierarchy. For example, if you have the term "fruit" and a child term "apple", with a depth of 1 (or higher) then filtering for the term "fruit" will get nodes that are tagged with "apple" as well as "fruit". If negative, the reverse is true; searching for "apple" will also pick up nodes tagged with "fruit" if depth is -1 (or lower).'),
     );
