@@ -10,6 +10,13 @@ Dependencies
 Use of the module requires that you download and install the [Menu Node API](https://backdropcms.org/project/menu_node_views)
 
 
+Installation
+---------------
+
+Install this module using the official Backdrop CMS instructions at
+https://backdropcms.org/guide/modules
+
+
 How to use
 ----------
 
