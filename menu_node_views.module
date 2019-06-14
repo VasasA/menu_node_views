@@ -4,7 +4,7 @@
 /**
  * @file Enables Views to leverage menu hierarchies when displaying nodes.
  */
-
+module_load_include('inc', 'menu_node_views', 'menu_node_views.views');
 /**
  * Implement hook_views_api().
  */

@@ -4,4 +4,3 @@ dependencies[] = menu_node
 backdrop = 1.x
 type = module
 tags[] = Menus
-
