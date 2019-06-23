@@ -6,7 +6,7 @@
  */
 
 /**
- * Implement hook_views_data().
+ * Implements hook_views_data().
  */
 function menu_node_views_views_data() {
   $data = array();
@@ -17,7 +17,7 @@ function menu_node_views_views_data() {
       'field' => 'nid',
     ),
   );
-/*  $data['menu_node']['mlid'] = array(
+/*$data['menu_node']['mlid'] = array(
     'title' => t('Menu link id'),
     'help' => t('Unique menu item dentifier.'),
     'field' => array(

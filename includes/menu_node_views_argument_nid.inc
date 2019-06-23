@@ -32,19 +32,19 @@ class menu_node_views_argument_nid extends views_handler_argument_node_nid {
     foreach ($pid_list as $pid) {
       $item = db_query("SELECT * FROM {menu_links} WHERE mlid = :pid", array(':pid' => $pid->mlid))->fetchObject();
       if ($item) {
-        $max_depth = menu_link_children_relative_depth((array)$item);
+        $max_depth = menu_link_children_relative_depth((array) $item);
         if ($max_depth < $this->options['depth']) {
           $depth = $max_depth;
         }
         $i = (int) $item->depth;
         $depth = (int) ($i + $depth);
-        $expression = "({$this->table_alias}.p{$i} = " . (int)$item->mlid;
+        $expression = "({$this->table_alias}.p{$i} = " . (int) $item->mlid;
         $expression .= " AND {$this->table_alias}.depth > {$i}";
         $expression .= " AND {$this->table_alias}.depth <= {$depth})";
         $conditions[] = $expression;
       }
     }
-    $snippet = '('.implode(' OR ', $conditions).')';
+    $snippet = '(' . implode(' OR ', $conditions) . ')';
     $this->query->add_where_expression(0, $snippet);
   }
 }
