@@ -20,7 +20,7 @@ https://backdropcms.org/guide/modules
 How to use
 ----------
 
-The module adds new, menu-related filter/sort criteria to those available by views. Listing them would be a good idea too:
+The module adds new, menu-related filter/sort criteria to those available by views:
 - Menu: Depth The depth of the menu item.
 - Menu: Hidden The menu item visibility.
 - Menu: Link path The link path for the menu item.
