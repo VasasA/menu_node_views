@@ -33,7 +33,7 @@ The module adds new, menu-related filter/sort criteria to those available by vie
 - Menu: Weight - The weight of the menu item.
 
 
-The module adds new fields under appropriate conditions (for example when the view shows 'Menu tree'):
+When a view is configured to show fields (Format > Show: Fields), the module allows you to add new fields:
 - Menu: Depth - The depth of the menu item.
 - Menu: Description - The description used for the menu item.
 - Menu: Hidden - The menu item visibility.
