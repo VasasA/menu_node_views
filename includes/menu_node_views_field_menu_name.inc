@@ -10,7 +10,7 @@ class menu_node_views_field_menu_name extends views_handler_field {
     if (!isset($names)) {
       $names = menu_get_menus();
     }
-    $value = $names[$values->{$this->field_alias}];
+    $value = isset($names[$values->{$this->field_alias}]) ? $names[$values->{$this->field_alias}] : '';
     return check_plain($value);
   }
 
