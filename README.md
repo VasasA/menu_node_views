@@ -7,7 +7,7 @@ The Menu Node Views module provides Views integration for nodes assigned to the 
 Dependencies
 ------------
 
-Use of the module requires that you download and install the [Menu Node API](https://backdropcms.org/project/menu_node_views)
+Use of the module requires that you download and install the [Menu Node API](https://backdropcms.org/project/menu_node)
 
 
 Installation
