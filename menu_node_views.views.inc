@@ -235,5 +235,12 @@ function menu_node_views_views_data() {
       'handler' => 'menu_node_views_sort_menu',
     ),
   );
+  $data['menu_links']['external'] = array(
+    'title' => t('Not in content'),
+    'help' => t('Menu items without content.'),
+    'filter' => array(
+      'handler' => 'menu_node_views_filter_no_content',
+    ),
+  );
   return $data;
 }
