@@ -236,7 +236,7 @@ function menu_node_views_views_data() {
     ),
   );
   $data['menu_links']['external'] = array(
-    'title' => t('Not in content'),
+    'title' => t('No content'),
     'help' => t('Menu items without content.'),
     'filter' => array(
       'handler' => 'menu_node_views_filter_no_content',
