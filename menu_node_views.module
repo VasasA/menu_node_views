@@ -23,5 +23,6 @@ function menu_node_views_autoload_info() {
     'menu_node_views_field_description' => 'includes/menu_node_views_field_description.inc',
     'menu_node_views_field_menu_name' => 'includes/menu_node_views_field_menu_name.inc',
     'menu_node_views_filter_no_content' => 'includes/menu_node_views_filter_no_content.inc',
+    'menu_node_views_filter_content_without_menu' => 'includes/menu_node_views_filter_content_without_menu.inc',
   );
 }

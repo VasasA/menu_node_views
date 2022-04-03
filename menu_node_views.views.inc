@@ -242,5 +242,12 @@ function menu_node_views_views_data() {
       'handler' => 'menu_node_views_filter_no_content',
     ),
   );
+  $data['node']['no_menu'] = array(
+    'title' => t('Content without menu entry'),
+    'help' => t('Content without menu entry.'),
+    'filter' => array(
+      'handler' => 'menu_node_views_filter_content_without_menu',
+    ),
+  );
   return $data;
 }
