@@ -32,6 +32,9 @@ The module adds new, menu-related filter/sort criteria to those available by vie
 - Menu: Parent menu link id - The unique menu link identifier for this item's parent.
 - Menu: Weight - The weight of the menu item.
 
+More filters:
+- Menu: No content - Menu items without content.
+- Content: Content without menu entry.
 
 When a view is configured to show fields (Format > Show: Fields), the module allows you to add new fields:
 - Menu: Depth - The depth of the menu item.
