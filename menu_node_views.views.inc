@@ -235,7 +235,7 @@ function menu_node_views_views_data() {
       'handler' => 'menu_node_views_sort_menu',
     ),
   );
-  $data['menu_links']['external'] = array(
+  $data['menu_links']['no_content'] = array(
     'title' => t('No content'),
     'help' => t('Menu items without content.'),
     'filter' => array(
